@@ -7,10 +7,32 @@ let homie = document.getElementById('homie');
 let increase = document.getElementById('increase');
 let showElect = document.getElementById('showElect');
 let electronics = document.getElementById('electronics');
+let refreigerator = document.getElementById('refridgerator');
+let freezo = document.getElementById('freezo');
+let cartel = document.getElementById('cartel');
+let ordered = document.getElementById('ordered');
+let total = document.getElementById('total');
+let im = document.getElementById('im');
+let mpty = document.getElementById('mpty');
 let imageobj;
 let electron;
 let showElectron;
-let crease=1;
+let seeFreezer;
+let findFreezer;
+let findTv;
+let sect=[];
+let index=0;
+let crease=0;
+let ammount = 0
+let every = 0
+let tota;
+let disp;
+let currentId;
+let freezerObj;
+let cartArray=[];
+let findItem;
+
+
 let orders= [
 {
 name:'home theater',
@@ -18,9 +40,9 @@ price:'$500',
 img:"./images/electronics_220x220.png"
 },
 {
-name:'refrigerator',
+name:'power',
 price:'$550',
-img:"./images/refreigerator.jpg"
+img:"./images/Power..webp"
 },
 {
 name:'Television',
@@ -37,17 +59,16 @@ img:"./images/iphone.png"
 
 let items= [
 {
-name:'Computing',
-img:"./images/Computing.webp"
-},
-{
 name:'Electronics',
 img:"./images/Electronics.jpg_Tv.jpg"
 },
 {
-name:'Power',
-price:'$700',
-img:"./images/Power..webp"
+name:'Refridgerator',
+img:"./images/refreigerator.jpg"
+},
+{
+name:'Computing',
+img:"./images/Computing.webp"
 },
 {
 name:'Mobile phones',
@@ -90,6 +111,20 @@ tent2.innerHTML+=`<button onclick="findImage('${el.name}')" id="ment1">
 })
 }
 see()
+function findImage(nameOfImage){
+   console.log(nameOfImage);
+   showElectron= items.find(el=>{
+   return el.name==nameOfImage
+   })
+   if (showElectron.name=='Electronics') {
+   electronics.style.display='block'
+   content.style.display='none' 
+   }
+   if (showElectron.name=='Refridgerator') {
+     freezo.style.display='block' 
+     content.style.display='none' 
+   }
+   }
 
 // function findImage(nameOfImage){
 // console.log(nameOfImage);
@@ -130,74 +165,86 @@ let gadgets= [
 {
  image:"./images/tv1.jpg",
  name:'HD LED Tv',
- price:'$300',
- cart:'Add To Cart'
+ price:300,
+ cart:'Add To Cart',
+ id:'1'
 },
 {
  image:"./images/tv2.jpg",
  name:'HD LED Tv',
- price:'$500',
- cart:'Add To Cart'
+ price:500,
+ cart:'Add To Cart',
+ id:'2'
 },
 {
  image:"./images/tv3.jpg",
  name:'HD LED Tv',
- price:'$350',
- cart:'Add To Cart'
+ price:350,
+ cart:'Add To Cart',
+ id:'3'
 },
 {
  image:"./images/tv4.jpg",
  name:'HD LED Tv',
- price:'$300',
- cart:'Add To Cart'
+ price:300,
+ cart:'Add To Cart',
+ id:'4'
 },
 {
  image:"./images/tv10.jpg",
  name:'HD LED Tv',
- price:'$600',
- cart:'Add To Cart'
+ price: 600,
+ cart:'Add To Cart',
+ id:'5'
 },
 {
  image:"./images/tv5.jpg",
  name:'HD LED Tv',
- price:'$400',
- cart:'Add To Cart'
+ price:400,
+ cart:'Add To Cart',
+ id:'6'
 },
 {
  image:"./images/tv6.jpg",
  name:'HD LED Tv',
- price:'$450',
- cart:'Add To Cart'
+ price:450,
+ cart:'Add To Cart',
+ id:'7'
 },
 {
  image:"./images/tv7.jpg",
  name:'HD LED Tv',
- price:'$550',
- cart:'Add To Cart'
+ price:550,
+ cart:'Add To Cart',
+ id:'8'
 },
 {
  image:"./images/tv8.jpg",
  name:'HD LED Tv',
- price:'$700',
- cart:'Add To Cart'
+ price:700,
+ cart:'Add To Cart',
+ id:'9'
 },
 {
  image:"./images/tv9.jpg",
  name:'HD LED Tv',
- price:'$800',
- cart:'Add To Cart'
+ price: 800,
+ cart:'Add To Cart',
+ id:'10'
 },
 {
  image:"./images/tv11.jpg",
  name:'HD LED Tv',
- price:'$820',
- cart:'Add To Cart'
+ price: 820,
+ cart:'Add To Cart',
+ id:'11'
 },
 {
  image:"./images/tv12.jpg",
  name:'HD LED Tv',
- price:'$840',
- cart:'Add To Cart'
+ price: 840,
+ cart:'Add To Cart',
+ id:'12'
 },
 ]
 
@@ -207,32 +254,290 @@ showElect.innerHTML+=`<button onclick="findElectronics('${el.image}')" id="mento
 <div id="elect1"><img class="elect2" src="${el.image}" alt="">
 </div>
 <div id="names">${el.name}</div>
-<div id="prices">${el.price}</div>
-<div id="carts" onclick="carting()">${el.cart}</div>
+<div id="prices"> $${el.price}</div>
+<div id="carts" onclick="carty('${el.image}')">${el.cart}</div>
 </button>
 `
 })
+
 }
 showTv()
-
-function findImage(nameOfImage){
-console.log(nameOfImage);
-showElectron= items.find(el=>{
-return el.name==nameOfImage
+function findElectronics(nameOfTv){
+findTv= gadgets.find((el)=>{
+return el.image==nameOfTv
 })
-if (showElectron.name=='Electronics') {
-electronics.style.display='block'
-content.style.display='none' 
-} else {
+console.log(findTv);
 
 }
-}
+
+
 
 function home(){
 content.style.display='block';
 electronics.style.display='none';
+freezo.style.display='none' 
+ordered.style.display='none' 
+mpty.style.display='none' 
 }
-function carting(){
-increase.style.display='inherit'
-increase.innerHTML=crease++
+
+
+
+function carty(nameOfTv){
+findTv= gadgets.find((el)=>{
+return el.image==nameOfTv
+})
+console.log(findTv);
+// cartel.innerHTML+=` <button id="freeze">
+// <div id="alls">
+//  <div><img id="pic" src="${findTv.image}" alt=""></div>
+//  <div id="type">${findTv.name}</div>
+//  <div id="money">$${findTv.price}</div>
+// </div>
+// </button>
+// <button id="remove" onclick="dell('${currentId}')"> Remove</button>
+// <br>
+// `
+cartel.innerHTML=''
+pushing()
+ammount+=findTv.price
+total.innerHTML=`$${ammount}`
+// console.log(el.price);
+crease = crease + 1
+increase.innerHTML=crease
+increase.style.display='inherit';
+
 }
+
+function showCarty(){
+for (let i = 0; i < cartArray.length; i++) {
+cartel.innerHTML+=` <button id="freeze">
+<div id="alls">
+ <div><img id="pic" src="${cartArray[i].image}" alt=""></div>
+ <div id="type">${cartArray[i].name}</div>
+ <div id="money">$${cartArray[i].price}</div>
+</div>
+</button>
+<button id="remove" onclick="del('${i}')"> Remove</button>
+<br>
+`
+
+   
+}
+}
+function pushing(){
+let image = findTv.image
+let name = findTv.name
+let price = findTv.price
+cartArray.push({name:name, image:image, price:price})
+showCarty()
+}
+
+
+let freezer= [
+   {
+    image:"./images/fridge1.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:200,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge2.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:300,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge3.jpg",
+    name:'Bruhm Refrigerator- Silver',
+    price:350,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge4.jpg",
+    name:'Skyrun  Fridge ',
+    price:600,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge5.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:340,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge6.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:500,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge13.jpg",
+    name:'Skyrun  Fridge ',
+    price:550,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge8.jpg",
+    name:'Skyrun  Fridge ',
+    price:400,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge9.jpg",
+    name:'Skyrun  Fridge ',
+    price:650,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge10.jpg",
+    name:'Skyrun  Fridge ',
+    price:710,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge11.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:200,
+    cart:'Add To Cart'
+   },
+   {
+    image:"./images/fridge12.jpg",
+    name:'Nexus Refrigerator - Silver',
+    price:270,
+    cart:'Add To Cart'
+   },
+]
+
+
+function showFridge(){
+seeFreezer= freezer.forEach((el)=>{
+refreigerator.innerHTML+=`<button onclick="findFridge('${el.image}')" id="mentor">
+<div id="addition"><div id="elect1"><img class="elect2" src="${el.image}" alt="">
+</div>
+<div id="names">${el.name}</div>
+<div id="prices">$${el.price}</div>
+<div id="carts" onclick="carting('${el.image}')">${el.cart}</div>
+</div>
+</button>
+`
+})
+
+}
+showFridge()
+
+function findFridge(nameOfFridge){
+freezerObj= freezer.find((el)=>{
+return el.image==nameOfFridge
+})
+console.log(freezerObj);
+
+}
+
+function carting(nameOfFridge){
+findTv= freezer.find((el)=>{
+return el.image==nameOfFridge
+})
+console.log(findFreezer);
+// cartel.innerHTML+=` <button id="freeze">
+// <div id="alls">
+//  <div><img id="pic" src="${findFreezer.image}" alt=""></div>
+//  <div id="type">${findFreezer.name}</div>
+//  <div id="money">$${findFreezer.price}</div>
+// </div>
+// </button>
+// <button id="remove" onclick="del('${currentId}')"> Remove</button>
+// <br>
+// `
+cartel.innerHTML=''
+ammount+=findTv.price
+total.innerHTML=ammount
+increase.style.display='inherit';
+pusher();
+crease = crease + 1
+increase.innerHTML=crease
+increase.style.display='inherit';
+}
+
+
+function showCart(){
+for (let dex = 0; dex < cartArray.length; dex++) {
+cartel.innerHTML+=` <button id="freeze">
+<div id="alls">
+ <div><img id="pic" src="${cartArray[dex].image}" alt=""></div>
+ <div id="type">${cartArray[dex].name}</div>
+ <div id="money">$${cartArray[dex].price}</div>
+</div>
+</button>
+<button id="remove" onclick="del('${dex}')"> Remove</button>
+<br>
+`
+
+}
+}
+function pusher(){
+let image= findTv.image
+let name=findTv.name
+let price = findTv.price
+cartArray.push({image:image, price:price,name:name})
+showCart()
+}
+
+
+function added(){
+if (cartel.innerHTML=='') {
+ordered.style.display='none'
+cartel.style.display='none'
+mpty.style.display='block'
+content.style.display='none'
+electronics.style.display='none';
+freezo.style.display='none'
+} else {
+ordered.style.display='block'
+cartel.style.display='block'
+content.style.display='none'
+electronics.style.display='none';
+freezo.style.display='none' 
+}
+
+}
+
+function del(k){
+console.log(k);
+cartel.innerHTML= cartArray.splice(k,1)
+cartel.innerHTML=''
+increase.innerHTML=''
+crease=crease-1
+increase.innerHTML=crease
+// console.log(cartArray.indexOf(findTv.price));
+
+  if (increase.innerHTML==0) {
+ increase.innerHTML='';
+ ordered.style.display='none'
+ mpty.style.display='block'
+}
+ if (findTv) {
+  ammount-=findTv.price
+total.innerHTML=`$${ammount}` 
+} else {
+ammount=ammount- findTv.price
+total.innerHTML=`$${ammount}`
+}
+if (k==0) {
+   ammount=0
+   // if (findTv.price==0) {
+   //    ammount=0
+   //    total.innerHTML=0
+   // } else {
+      
+   // }
+   total.innerHTML=ammount    
+   
+   console.log(findTv.price);
+}
+
+showCart()
+}
+
+// function calc(){
+
+// }

@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./commerce.css">
-     <!-- <link rel="stylesheet" href="./CSS/bootstrap.css">
-     -->
-     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
 <!-- jQuery library -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 #container{
 /* display: none; */
@@ -33,10 +31,19 @@ display: none;
 #electronics{
 display: none;
 }
+#freezo{
+display: none;
+}
+#ordered{
+display: none;
+}
+#mpty{
+display: none;
+}
 </style>
 </head>
 <body>
-<div id="container">
+<div id="container" class="container-fluid p-5">
   <div id="head">
      <div id="head1">
         <img src="./images/2023_02_17_22_45_IMG_4124.JPG"
@@ -66,9 +73,9 @@ display: none;
     placeholder="Search products, brands and categories" >
     <button id="search" >SEARCH</button>
     <div id="logger">
-      <button id="log3">Help?</button>
+      <button  id="log3">Help?</button>
       <button id="log4">Login/Signup</buttton>
-     <button id="car"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
+     <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
     </div logger>
     
   </div number3>
@@ -105,24 +112,64 @@ display: none;
     </div showElect>
   
   </div electronics>
+
+  <!-- fridge page -->
+<div id="freezo">
+  <button id="homie" onclick="home()">Home</button>
+  <!-- <div id="cartel"></div> -->
+  <div id="im"></div>
+<div id="refridgerator"></div refridgerator>
+</div freezo>
+
+<!-- order -->
+<div id="ordered">
+  <button id="homie" onclick="home()">Home</button>
+  <div id="cartel"></div>
+  <div id="check">
+     <h1 id="sum">Sub Total</h1>
+    <h1 id="total"></h1>
+  </div check><br>
+  <div><button id="out">CheckOut</button></div>
+
+  <br><br><br>
+</div orders>
+
+
+
 </div container>
-
 <!-- login page -->
- <div id="login">
-  <div></div>
-  <div id="great">Welcome to T.Great Universal Limited</div>
+ <div id="login" class="container bg-light p-5 mt-5 ">
+  <div class="card  p-5 ">
+  <div class="" >
+    <div id="great">Welcome to T.Great Universal Limited</div>
   <div id="mail">Type your e-mail or phone Number to log in or create an Account</div>
-  <div id="input">
-    <input id="put"  type="text" placeholder="Email or Mobile Number">
-    <div id="reggae"></div>
-  </div input>
-  <div id="bu"><button id="but" onclick="inside()">Continue</button></div>
-  <div><button id="but1" class="btn btn-success">Login with Facebook</button></div>
-  <div>
-    <button>For further support, you may visit the Help Center or contact our <br> customer service team.</button>
   </div>
-
+  <form action="" >
+    <div id="input" class="form-group mt-3 ">
+      <input id="put"  type="text" placeholder="Email or Mobile Number" class="w-50">
+     </div input>
+     <div><button class="btn btn-success mt-3 w-50" id="but" onclick="inside()">Continue</button></div>
+    <div><button id="but1" class="btn btn-success mt-5 w-50">Login with Facebook</button></div>
+      <div><button class=" mt-3">For further support, you may visit the Help Center or contact our <br> customer service team.</button></div>
+  </form>
+  
+  
+  <div>
+    
+  </div>
+</div>
  </div login>
-</body>
+ <!-- empty cart -->
+<div id="mpty" >
+  <button id="homie" onclick="home()">Home</button>
+  <div id="mpty1">
+   <div id="your">your cart is empty <br><br>
+     <div id="your1">Browse  our categories and discover our best deals!</div>
+   <button class="btn btn-success" id="your2">Start Shopping</button>
+   </div>
+  </div>
+ </div mpty>
+
+</body> 
 </html>
 <script src="./commerce.js"></script>

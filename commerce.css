@@ -343,7 +343,8 @@ font-size: 20px;
 }
 
 /* login page */
-#login{
+
+/* #login{
 width: 100%;
 height: 500px;
 padding-top: 100px;
@@ -387,15 +388,20 @@ margin-bottom: 80px;
 #but1{
 width: 520px;
 height: 60px;
-/* background-color: orangered; */
-margin-left: -10px;
+ background-color: orangered;
+ margin-left: -10px;
 border-radius: 5px;
 border: 2px solid black;
 color: white;
 background-color: blue;
 margin-bottom: 40px;
-}
+}  */
 
+
+
+#showElect{
+width: 98%;
+}
 #mentor{
 margin-right: 10px;
 margin-left: 2%;
@@ -422,4 +428,99 @@ color: orangered;
 font-size: 20px;
 font-weight: 700;  
 color: rgb(243, 17, 17);
+}
+
+#alls{
+display: flex;
+width: 100%;
+margin-right: 40px;
+}
+#freeze{
+margin-bottom: 10px;
+border: 2px solid gray;
+width: 100%;
+}
+#cartel{
+width: 100%;
+}
+#pic{
+height: 200px;
+margin-right: 50px;
+width: 300px;
+/* border: 2px solid black; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#type{
+font-size: 20px;
+margin-top: 100px;
+margin-right: 200px;
+width: 50%;
+/* border: 2px solid black; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#money{
+font-size: 20px;
+margin-top: 100px;
+/* border: 2px solid black; */
+}
+#remove{
+font-size: 20px;
+color: orangered;
+margin-bottom: 50px;
+border: 2px solid orangered;
+height: 50px;
+width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#check{
+display: flex;
+justify-content: space-around;
+}
+#check h1{
+color: orangered;
+}
+#out{
+height: 60px;
+width: 30%;
+background-color: rgb(14, 173, 14);
+font-size: 20px;
+color: white; 
+font-weight: 700;
+margin-left: 200px;
+}
+
+#mpty{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+#mpty1{
+width: 50%;
+height: 300px;
+border: 1px solid black;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin-left: 400px;
+}
+#mpty button{
+color: white;
+background-color: orange;
+width: 200px;
+height: 60px;
+}
+#your{
+font-weight: 700;
+font-size: 20px;
+margin-bottom: 20px;
+}
+#your1{
+margin-bottom: 80px;
 }
