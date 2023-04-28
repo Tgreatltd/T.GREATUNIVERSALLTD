@@ -3,6 +3,7 @@ let tent2 = document.getElementById('tent2');
 let put = document.getElementById('put');
 let car = document.getElementById('car');
 let showMe = document.getElementById('show');
+let login = document.getElementById('login');
 let homie = document.getElementById('homie');
 let increase = document.getElementById('increase');
 let showElect = document.getElementById('showElect');
@@ -15,6 +16,19 @@ let total = document.getElementById('total');
 let im = document.getElementById('im');
 let mpty = document.getElementById('mpty');
 let tester = document.getElementById('tester');
+let input1 = document.getElementById('input1');
+let input2 = document.getElementById('input2');
+let input3 = document.getElementById('input3');
+let input4 = document.getElementById('input4');
+let input5 = document.getElementById('input5');
+let smallie1 = document.getElementById('smallie1');
+let smallie2 = document.getElementById('smallie2');
+let smallie3 = document.getElementById('smallie3');
+let smallie4 = document.getElementById('smallie4');
+let smallie5 = document.getElementById('smallie5');
+let collect = document.getElementById('collect');
+let content = document.getElementById('content');
+let container = document.getElementById('container');
 let imageobj;
 let electron;
 let showElectron;
@@ -32,6 +46,8 @@ let currentId;
 let freezerObj;
 let cartArray=[];
 let findItem;
+
+
 
 
 let orders= [
@@ -419,7 +435,7 @@ function carting(nameOfFridge){
 findTv= freezer.find((el)=>{
 return el.image==nameOfFridge
 })
-console.log(findFreezer);
+console.log(findTv);
 // cartel.innerHTML+=` <button id="freeze">
 // <div id="alls">
 //  <div><img id="pic" src="${findFreezer.image}" alt=""></div>
@@ -470,7 +486,7 @@ if (cartel.innerHTML=='') {
 ordered.style.display='none'
 cartel.style.display='none'
 mpty.style.display='block'
-content.style.display='none'
+container.style.display='none'
 electronics.style.display='none';
 freezo.style.display='none'
 } else {
@@ -523,6 +539,145 @@ showCart()
 // function calc(){
 
 // }
+let namee;
+let value;
+let form=[];
+let newForm;
+let regex = /^[A-Za-z0-9]+@[A-Za-z0-9]+(.)+[a-zA-Z]$/
 
+function handleChange(e){
+   // let regex = /^[A-Za-z0-9]+@[A-Za-z0-9]+(.)+[a-zA-Z]$/
+// console.log(e);
+let input1 = document.getElementById('input1');
+let input2 = document.getElementById('input2');
+let input3 = document.getElementById('input3');
+let input4 = document.getElementById('input4');
+let input5 = document.getElementById('input5');
+for (let index = 0; index < form.length; index++) {
+ let  tobi={
+      name:form[index].firstName,
+      lastName:form[index].lastName,
+      email:form[index].email,
+      phoneNumber:form[index].phoneNumber,
+      password:form[index].password
+     }
+   console.log(
+      // tobi
+   )
+   
+}
+ form.push(
+ {
+   firstName:input1.value,
+   lastName:input2.value,
+   email:input3.value,
+   phoneNumber:input4.value,
+   password:input5.value,
+}
+)
+// console.log(timo);
+
+//  namee = e.target.name
+// value = e.target.value
+// smallie.innerHTML=e.target.value
+// newForm={...form,[namee]:value}
+// console.log(newForm);
+
+
+// console.log(regex.test(mail));
+if (regex.test(input3.value)) {
+smallie3.innerHTML="Email is correct"
+smallie3.style.color='green'
+} else {
+smallie3.innerHTML="Email is not correct" 
+smallie3.style.color='red'
+}
+}
+function create(e){
+e.preventDefault()
+console.log(form[form.length-1]);
+if (regex.test(input3.value)
+&&input1.value!==''&&
+input2.value!==''&&input4.value!==''&&
+input5.value!==''
+) {
+   container.style.display='block'
+   content.style.display='block'
+   login.style.display='none'
+   }
+
+if (input1.value=='') {
+  smallie1.innerHTML='First Name is Required' 
+  smallie1.style.color='red'
+  
+}else{
+   smallie1.innerHTML='' 
+ }
+
+if (input2.value=='') {
+   smallie2.innerHTML='Last Name is Required' 
+   smallie2.style.color='red'
+   
+} else{
+   smallie2.innerHTML='' 
+ }
+
+
+ if (input3.value=='') {
+   smallie3.innerHTML='Email is Required' 
+   smallie3.style.color='red'
+} else{
+   smallie3.innerHTML='' 
+ }
+
+ if (input4.value=='') {
+   smallie4.innerHTML='Mobile Number is Required' 
+   smallie4.style.color='red'
+} else{
+   smallie4.innerHTML='' 
+ }
+
+
+ if (input5.value=='') {
+   smallie5.innerHTML='Password is Required' 
+   smallie5.style.color='red'
+   
+ 
+ } else{
+   smallie5.innerHTML='' 
+ }
+  
+ 
+// form.forEach(el=>{
+// collect.innerHTML='';
+// collect.innerHTML+=`<div>
+// <div>${el.firstName}</div>
+// <div>${el.lastName}</div>
+// <div>${el.email}</div>
+// <div>${el.phoneNumber}</div>
+// <div>${el.password}</div>
+// </div>
+// `
+// })
+
+
+input1.value=''
+input2.value=''
+input3.value=''
+input4.value=''
+input5.value=''
+}
+function signUp(){
+login.style.display='flex'
+container.style.display='none'
+
+}
+function logger(e){
+   e.preventDefault()
+}
+function shopping(){
+container.style.display='block'
+mpty.style.display='none'
+}
 
 

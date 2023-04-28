@@ -20,15 +20,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 #container{
-display: none;
-}
-#login{
 /* display: none; */
 }
-
-#content{
+#login{
 display: none;
 }
+
 #electronics{
 display: none;
 }
@@ -75,7 +72,7 @@ display: none;
     <button id="search" >SEARCH</button>
     <div id="logger">
       <button  id="log3">Help?</button>
-      <button id="log4">Login/Signup</buttton>
+      <button id="log4" onclick="signUp()">Login/Signup</buttton>
      <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
     </div logger>
     
@@ -139,47 +136,56 @@ display: none;
 
 </div container>
 <!-- login page -->
- <div id="login" class="container p-5">
-   <div class="card p-5">
+ <div id="login" class="container p-5 bg-light">
+   <div class="card p-5  ">
      <form action="">
        <h1>Create An Account</h1>
        <div class="form-group">
         <label >First Name</label>
-          <input type="text" class="form-control">
+          <input oninput="handleChange(event)" name="firstName"  type="text" class="form-control" id="input1">
+          <small id="smallie1"></small>
        </div>
        <div class="form-group">
         <label >Last Name</label>
-          <input type="text" class="form-control">
+          <input oninput="handleChange(event)" name="LastName" type="text" class="form-control" id="input2">
+          <small id="smallie2"></small>
        </div>
        <div class="form-group">
         <label >Email</label>
-          <input type="email" class="form-control">
+          <input oninput="handleChange(event)" name="email"  type="email" class="form-control" id="input3">
+          <small id="smallie3"></small>
        </div>
        <div class="form-group">
         <label > Mobile Number</label>
-          <input type="text" class="form-control">
+          <input oninput="handleChange(event)" name="number" type="text" class="form-control " id="input4">
+          <small id="smallie4"></small>
        </div>
        <div class="form-group">
         <label >Password</label>
-          <input type="password" class="form-control">
+          <input oninput="handleChange(event)" name="password" type="password" class="form-control" id="input5">
+          <small id="smallie5"></small>
        </div>
-         <button class="btn btn-success form-control">Create An Account</button><br>
-        <div>Already Have an Account?</div>
-        <button class="btn btn-warning form-control">Login</button>
+         <button class="btn btn-success form-control" onclick="create(event)">Create An Account</button><br>
+        <div id="class" class="mt-5">Already Have an Account?</div>
+        <button class="btn btn-warning form-control mt-1" onclick="logger(event)">Login</button>
      </form>
    </div>
 
  </div>
+ <!-- <div id="collect"></div> -->
  <!-- empty cart -->
-<div id="mpty" >
-  <button id="homie" onclick="home()">Home</button>
-  <div id="mpty1">
+<div id="mpty"  >
+  <div class="container p-5 mt-5 bg-light">
+  <div id="board" class="card p-5 shadow">
    <div id="your">your cart is empty <br><br>
      <div id="your1">Browse  our categories and discover our best deals!</div>
-   <button class="btn btn-success" id="your2">Start Shopping</button>
-   </div>
+   <button class="btn btn-warning mt-5" id="your2" onclick="shopping()">Start Shopping</button>
+  
   </div>
+</div>
+</div>
  </div mpty>
+ 
 </body> 
 </html>
 <script src="./commerce.js"></script>
