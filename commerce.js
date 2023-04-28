@@ -660,17 +660,15 @@ if (input2.value=='') {
 // `
 // })
 
-
+}
+function signUp(){
+login.style.display='flex'
+container.style.display='none'
 input1.value=''
 input2.value=''
 input3.value=''
 input4.value=''
 input5.value=''
-}
-function signUp(){
-login.style.display='flex'
-container.style.display='none'
-
 }
 function logger(e){
    e.preventDefault()
