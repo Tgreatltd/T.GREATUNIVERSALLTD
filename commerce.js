@@ -512,6 +512,7 @@ increase.innerHTML=crease
  increase.innerHTML='';
  ordered.style.display='none'
  mpty.style.display='block'
+ container.style.display='none'
 }
  if (findTv) {
   ammount-=findTv.price
@@ -675,6 +676,7 @@ function logger(e){
 }
 function shopping(){
 container.style.display='block'
+content.style.display='block'
 mpty.style.display='none'
 }
 
