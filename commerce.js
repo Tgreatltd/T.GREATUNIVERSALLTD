@@ -14,6 +14,7 @@ let ordered = document.getElementById('ordered');
 let total = document.getElementById('total');
 let im = document.getElementById('im');
 let mpty = document.getElementById('mpty');
+let tester = document.getElementById('tester');
 let imageobj;
 let electron;
 let showElectron;
@@ -141,25 +142,6 @@ function findImage(nameOfImage){
 // `
 // }
 
-let mail = 'olamoyegunoluwagreat888@gmail.com'
-// let regex = /^[a-z]+@[a-z]+(.)com$/
-let reg = /^[a-zA-Z0-9]+@[a-z]+(.)com$/
-console.log(reg.test(mail));
-
-let reggae= document.getElementById('reggae')
-
-function inside(){
-mailing = put.value
-let regex=/^[a-z]+@[a-z]+(.)com$/
- put.value=regex.test(put.value) 
-
- if (put.value==false) {
-    reggae.innerHTML='the email is not correct'
- } else {
-    reggae.innerHTML='Successful'
- }
-
-}
 
 let gadgets= [
 {
@@ -541,3 +523,6 @@ showCart()
 // function calc(){
 
 // }
+
+
+
