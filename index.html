@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./commerce.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
@@ -137,8 +139,8 @@ display: none;
 </div container>
 <!-- login page -->
  <div id="login" class="container p-5 bg-light">
-   <div class="card p-5  ">
-     <form action="">
+  <div class="card p-5  ">
+     <form action="" id="forms">
        <h1>Create An Account</h1>
        <div class="form-group">
         <label >First Name</label>
@@ -152,12 +154,12 @@ display: none;
        </div>
        <div class="form-group">
         <label >Email</label>
-          <input oninput="handleChange(event)" name="email"  type="email" class="form-control" id="input3">
+          <input oninput="handleChanges(event)" name="email"  type="email" class="form-control" id="input3">
           <small id="smallie3"></small>
        </div>
        <div class="form-group">
         <label > Mobile Number</label>
-          <input oninput="handleChange(event)" name="number" type="text" class="form-control " id="input4">
+          <input oninput="handleChanger(event)" name="number" type="text" class="form-control " id="input4">
           <small id="smallie4"></small>
        </div>
        <div class="form-group">

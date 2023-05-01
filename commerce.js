@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 let tent1 = document.getElementById('tent1');
 let tent2 = document.getElementById('tent2');
 let put = document.getElementById('put');
@@ -5,6 +7,7 @@ let car = document.getElementById('car');
 let showMe = document.getElementById('show');
 let login = document.getElementById('login');
 let homie = document.getElementById('homie');
+let forms = document.getElementById('forms');
 let increase = document.getElementById('increase');
 let showElect = document.getElementById('showElect');
 let electronics = document.getElementById('electronics');
@@ -544,7 +547,9 @@ let namee;
 let value;
 let form=[];
 let newForm;
-let regex = /^[A-Za-z0-9]+@[A-Za-z0-9]+(.)+[a-zA-Z]$/
+let regex = /^[a-z]+@[a-z]+(.)com$/
+let rege = /^[\+](234)+[7-9][0-1][0-9]{8}$/
+let reg = /^[0][7-9][0-1][0-9]{8}$/
 
 function handleChange(e){
    // let regex = /^[A-Za-z0-9]+@[A-Za-z0-9]+(.)+[a-zA-Z]$/
@@ -576,6 +581,8 @@ for (let index = 0; index < form.length; index++) {
    password:input5.value,
 }
 )
+
+
 // console.log(timo);
 
 //  namee = e.target.name
@@ -586,21 +593,51 @@ for (let index = 0; index < form.length; index++) {
 
 
 // console.log(regex.test(mail));
+
+
+
+}
+
+function handleChanger (){
+if (reg.test(input4.value)) {
+   smallie4.innerHTML='Mobile Number Is Valid' 
+   smallie4.style.color='green'
+} else {
+   smallie4.innerHTML='Mobile Number Not Valid'
+   smallie4.style.color='red'
+}
+}
+function handleChanges(){
+
 if (regex.test(input3.value)) {
-smallie3.innerHTML="Email is correct"
+
+smallie3.innerHTML="Email is Valid"
 smallie3.style.color='green'
 } else {
-smallie3.innerHTML="Email is not correct" 
+smallie3.innerHTML="Email is not Valid" 
 smallie3.style.color='red'
 }
 }
-function create(e){
+async function  create(e){
 e.preventDefault()
 console.log(form[form.length-1]);
+const formsData= new FormData(forms)
+console.log([...formsData]);
+try {
+const response = await axios.post('https://httpbin.org/post',formsData)
+// .then(res=>console.log(res))
+console.log(response);
+} catch (error) {
+   console.log(error);
+}
+
+
+
+
 if (regex.test(input3.value)
 &&input1.value!==''&&
-input2.value!==''&&input4.value!==''&&
-input5.value!==''
+input2.value!==''&&
+input5.value!=='' && reg.test(input4.value)
 ) {
    container.style.display='block'
    content.style.display='block'
@@ -642,12 +679,22 @@ if (input2.value=='') {
  if (input5.value=='') {
    smallie5.innerHTML='Password is Required' 
    smallie5.style.color='red'
-   
- 
- } else{
+} else{
    smallie5.innerHTML='' 
  }
   
+ if (reg.test(input4.value)) {
+   smallie4.innerHTML=''
+ } else {
+   smallie4.innerHTML='Mobile Number is not valid' 
+   smallie4.style.color='red'
+ }
+ if (reg.test(input3.value)) {
+   smallie3.innerHTML=''
+ } else {
+   smallie3.innerHTML='Email is not valid' 
+   smallie3.style.color='red'
+ }
  
 // form.forEach(el=>{
 // collect.innerHTML='';
@@ -670,6 +717,8 @@ input2.value=''
 input3.value=''
 input4.value=''
 input5.value=''
+smallie3.innerHTML=''
+smallie4.innerHTML=''
 }
 function logger(e){
    e.preventDefault()
