@@ -32,6 +32,17 @@ let smallie5 = document.getElementById('smallie5');
 let collect = document.getElementById('collect');
 let content = document.getElementById('content');
 let container = document.getElementById('container');
+let li1 = document.getElementById('li1');
+let li2 = document.getElementById('li2');
+let showError = document.getElementById('showError');
+let showSuccess = document.getElementById('showSuccess');
+let names1 = document.getElementById('names1');
+let names2 = document.getElementById('names2');
+let names3 = document.getElementById('names3');
+let names4 = document.getElementById('names4');
+let done = document.getElementById('done');
+let done2 = document.getElementById('done2');
+let acc = document.getElementById('acc');
 let imageobj;
 let electron;
 let showElectron;
@@ -49,6 +60,10 @@ let currentId;
 let freezerObj;
 let cartArray=[];
 let findItem;
+let submitted=false;
+let feedBack;
+let errorMessage
+let successMessage;
 
 
 
@@ -554,6 +569,7 @@ let reg = /^[0][7-9][0-1][0-9]{8}$/
 function handleChange(e){
    // let regex = /^[A-Za-z0-9]+@[A-Za-z0-9]+(.)+[a-zA-Z]$/
 // console.log(e);
+
 let input1 = document.getElementById('input1');
 let input2 = document.getElementById('input2');
 let input3 = document.getElementById('input3');
@@ -561,10 +577,10 @@ let input4 = document.getElementById('input4');
 let input5 = document.getElementById('input5');
 for (let index = 0; index < form.length; index++) {
  let  tobi={
-      name:form[index].firstName,
+      firstName:form[index].firstName,
       lastName:form[index].lastName,
       email:form[index].email,
-      phoneNumber:form[index].phoneNumber,
+      mobileNum:form[index].phoneNumber,
       password:form[index].password
      }
    console.log(
@@ -577,7 +593,7 @@ for (let index = 0; index < form.length; index++) {
    firstName:input1.value,
    lastName:input2.value,
    email:input3.value,
-   phoneNumber:input4.value,
+   mobileNum:input4.value,
    password:input5.value,
 }
 )
@@ -606,6 +622,7 @@ if (reg.test(input4.value)) {
    smallie4.innerHTML='Mobile Number Not Valid'
    smallie4.style.color='red'
 }
+handleChange()
 }
 function handleChanges(){
 
@@ -614,23 +631,88 @@ if (regex.test(input3.value)) {
 smallie3.innerHTML="Email is Valid"
 smallie3.style.color='green'
 } else {
-smallie3.innerHTML="Email is not Valid" 
+smallie3.innerHTML="Email is not Correct" 
 smallie3.style.color='red'
 }
+handleChange()
+}
+
+
+async function submitToServer(){
+   // console.log(form[form.length-1]);
+
+try {
+   axios.defaults.headers.post['Content-Type']="application/x-www-form-urlencoded";
+   let response = await axios.post("http://127.0.0.1:4000/logon",form[form.length-1])
+   // console.log(response);
+   console.log(response.data.message);
+   showSuccess.innerHTML=response.data.message
+   // showSuccess.style.display='block'
+   // showError.style.display='none'
+
+   // if (response.data.message) {
+   //    showSuccess.style.display='block'
+   // showError.style.display='none'
+   // } else {
+   //    showSuccess.style.display='none'
+   //    showError.style.display='none'
+   // }
+
+   if (response.data.message) {
+      done2.style.display='block'
+   showError.style.display='none'
+   done.style.display='block'
+   login.style.display='none'
+   acc.innerHTML=response.data.message
+   } else {
+      showSuccess.style.display='none'
+      showError.style.display='none'
+     
+   }
+   // container.style.display='block'
+   // content.style.display='block'
+   // login.style.display='none'
+  
+} catch (error) {
+   console.log(error);
+   // console.log(error.response);
+   console.log(error.response.data.message);
+   showError.innerHTML=error.response.data.message
+   // showError.style.display='block'
+   // showSuccess.style.display='none'
+
+ if (error.response.data.message) {
+   showError.style.display='block'
+   showSuccess.style.display='none'
+ } else {
+   showSuccess.style.display='none'
+      showError.style.display='none'
+ }
+
+   if(error.response.data.error=="firstName must be at least 2 characters") {
+      names1.innerHTML  =error.response.data.error
+      names1.style.color='red'
+   } else{
+      names1.innerHTML=''
+   }
+
+    if (error.response.data.error=="lastName must be at least 2 characters") {
+      names2.innerHTML=error.response.data.error
+      names2.style.color='red'
+   } else{
+      names2.innerHTML=''
+   }
+
+}
+
 }
 async function  create(e){
 e.preventDefault()
 console.log(form[form.length-1]);
-const formsData= new FormData(forms)
-console.log([...formsData]);
-try {
-const response = await axios.post('https://httpbin.org/post',formsData)
-// .then(res=>console.log(res))
-console.log(response);
-} catch (error) {
-   console.log(error);
-}
-
+console.log(form);
+submitToServer()
+// const formsData= new FormData(forms)
+// console.log([...formsData]);
 
 
 
@@ -639,9 +721,9 @@ if (regex.test(input3.value)
 input2.value!==''&&
 input5.value!=='' && reg.test(input4.value)
 ) {
-   container.style.display='block'
-   content.style.display='block'
-   login.style.display='none'
+   // container.style.display='block'
+   // content.style.display='block'
+   // login.style.display='none'
    }
 
 if (input1.value=='') {
@@ -692,7 +774,7 @@ if (input2.value=='') {
  if (reg.test(input3.value)) {
    smallie3.innerHTML=''
  } else {
-   smallie3.innerHTML='Email is not valid' 
+   // smallie3.innerHTML='Email is not valid' 
    smallie3.style.color='red'
  }
  
@@ -727,6 +809,12 @@ function shopping(){
 container.style.display='block'
 content.style.display='block'
 mpty.style.display='none'
+}
+
+function continueToPage(){
+   container.style.display='block'
+   content.style.display='block'
+   done.style.display='none'
 }
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TGreat universal ltd</title>
     <link rel="stylesheet" href="./bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./commerce.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
@@ -40,10 +40,20 @@ display: none;
 #mpty{
 display: none;
 }
+#showError{
+display: none;
+}
+
+#showSuccess{
+display: none;
+}
+#done{
+display: none;
+}
 </style>
 </head>
 <body>
-<div id="container" class="container-fluid p-5">
+<div id="container" class="container-fluid">
   <div id="head">
      <div id="head1">
         <img src="./images/2023_02_17_22_45_IMG_4124.JPG"
@@ -72,11 +82,10 @@ display: none;
     <input type="text" name="" id="put" 
     placeholder="Search products, brands and categories" >
     <button id="search" >SEARCH</button>
-    <div id="logger">
-      <button  id="log3">Help?</button>
-      <button id="log4" onclick="signUp()">Login/Signup</buttton>
-     <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
-    </div logger>
+    <button  id="log3">Help?</button>
+    <button id="log4" onclick="signUp()">Login/Signup</buttton>
+   <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
+    <!-- <div id="logger"></div logger> -->
     
   </div number3>
 
@@ -95,9 +104,41 @@ display: none;
 
   <!-- contents -->
   <div id="content">
-      <div> <img id="dis" src="./images/displaypic.webp" alt=""></div>
-      <div id="diss"> <img id="dis1" src="./images/display pioc 2.jpg" alt=""></div>
+      <!-- <div> <img id="dis" src="./images/displaypic.webp" alt=""></div>
+      <div id="diss"> <img id="dis1" src="./images/display pioc 2.jpg" alt=""></div> -->
     
+<!-- carosel -->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"> </li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/displaypic.webp" id="mg" alt="" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/display pioc 2.jpg" alt="" id="mg" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/displaypic.webp" alt="" id="mg" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon bg-danger"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon bg-danger"></span>
+  </a>
+</div>
+
       <div id="today">Today's Deal</div>
 
    <div id="tent1"></div>
@@ -105,9 +146,9 @@ display: none;
     <div id="show"></div>
   </div content>
  <!-- electronics page -->
-  <div id="electronics">
+  <div id="electronics" class="bg-light">
    <button id="homie" onclick="home()">Home</button>
-    <div id="showElect">
+    <div id="showElect" class="container-fluid bg-light p-5">
 
     </div showElect>
   
@@ -118,7 +159,7 @@ display: none;
   <button id="homie" onclick="home()">Home</button>
   <!-- <div id="cartel"></div> -->
   <div id="im"></div>
-<div id="refridgerator"></div refridgerator>
+<div id="refridgerator" class="container-fluid bg-light p-5"></div refridgerator>
 </div freezo>
 
 <!-- order -->
@@ -138,29 +179,37 @@ display: none;
 
 </div container>
 <!-- login page -->
- <div id="login" class="container p-5 bg-light">
-  <div class="card p-5  ">
+<div id="login" class="container-fluid bg-light">
+ <div  class="container p-5 bg-light">
+  <div >
+    <div class="card p-5">
+    <strong id="showError" class="alert alert-danger"></strong>
+    <strong id="showSuccess" class="alert alert-success"></strong>
      <form action="" id="forms">
-       <h1>Create An Account</h1>
+       <h1 class="alert alert-primary">Create An Account</h1>
        <div class="form-group">
         <label >First Name</label>
           <input oninput="handleChange(event)" name="firstName"  type="text" class="form-control" id="input1">
           <small id="smallie1"></small>
+          <small id="names1"></small>
        </div>
        <div class="form-group">
         <label >Last Name</label>
           <input oninput="handleChange(event)" name="LastName" type="text" class="form-control" id="input2">
           <small id="smallie2"></small>
+          <small id="names2"></small>
        </div>
        <div class="form-group">
         <label >Email</label>
           <input oninput="handleChanges(event)" name="email"  type="email" class="form-control" id="input3">
           <small id="smallie3"></small>
+          <small id="names3"></small>
        </div>
        <div class="form-group">
         <label > Mobile Number</label>
           <input oninput="handleChanger(event)" name="number" type="text" class="form-control " id="input4">
           <small id="smallie4"></small>
+          <small id="names4"></small>
        </div>
        <div class="form-group">
         <label >Password</label>
@@ -171,9 +220,23 @@ display: none;
         <div id="class" class="mt-5">Already Have an Account?</div>
         <button class="btn btn-warning form-control mt-1" onclick="logger(event)">Login</button>
      </form>
+    </div>
    </div>
 
  </div>
+</div login>
+
+<!-- account creation success -->
+   <div id="done" class="container-fluid bg-light p-5">
+    <div id="done2" class="container bg-light p-5">
+      <div id="done3" class="card p-5">
+        <h2 class=" text-success" id="acc"></h2>
+        <br><br><br>
+      <button onclick="continueToPage()" class="form-control bg-warning mt-3" id="cont">Continue</button>
+      </div>
+    </div>
+
+  </div done>
  <!-- <div id="collect"></div> -->
  <!-- empty cart -->
 <div id="mpty"  >
