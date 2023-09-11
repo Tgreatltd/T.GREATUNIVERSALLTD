@@ -729,7 +729,7 @@ input5.value!=='' && reg.test(input4.value)
 if (input1.value=='') {
   smallie1.innerHTML='First Name is Required' 
   smallie1.style.color='red'
-  
+  names2.style.display='none'
 }else{
    smallie1.innerHTML='' 
  }
@@ -737,6 +737,7 @@ if (input1.value=='') {
 if (input2.value=='') {
    smallie2.innerHTML='Last Name is Required' 
    smallie2.style.color='red'
+   names2.style.display='none'
    
 } else{
    smallie2.innerHTML='' 
@@ -746,6 +747,7 @@ if (input2.value=='') {
  if (input3.value=='') {
    smallie3.innerHTML='Email is Required' 
    smallie3.style.color='red'
+   names2.style.display='none'
 } else{
    smallie3.innerHTML='' 
  }
@@ -753,6 +755,7 @@ if (input2.value=='') {
  if (input4.value=='') {
    smallie4.innerHTML='Mobile Number is Required' 
    smallie4.style.color='red'
+   names2.style.display='none'
 } else{
    smallie4.innerHTML='' 
  }
@@ -761,18 +764,21 @@ if (input2.value=='') {
  if (input5.value=='') {
    smallie5.innerHTML='Password is Required' 
    smallie5.style.color='red'
+   names2.style.display='none'
 } else{
    smallie5.innerHTML='' 
  }
   
  if (reg.test(input4.value)) {
    smallie4.innerHTML=''
+   names2.style.display='none'
  } else {
    smallie4.innerHTML='Mobile Number is not valid' 
    smallie4.style.color='red'
  }
  if (reg.test(input3.value)) {
    smallie3.innerHTML=''
+   names2.style.display='none'
  } else {
    // smallie3.innerHTML='Email is not valid' 
    smallie3.style.color='red'
@@ -801,9 +807,14 @@ input4.value=''
 input5.value=''
 smallie3.innerHTML=''
 smallie4.innerHTML=''
+names2.innerHTML=''
 }
 function logger(e){
    e.preventDefault()
+container.style.display='block'
+content.style.display='block'
+login.style.display='none'
+   
 }
 function shopping(){
 container.style.display='block'

@@ -1,256 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGreat universal ltd</title>
-    <link rel="stylesheet" href="./bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./commerce.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
-    
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGreat universal ltd</title>
+  <link rel="stylesheet" href="./bootstrap/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./commerce.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 
-<!-- jQuery library -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-<!-- Popper JS -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-#container{
-/* display: none; */
-}
-#login{
-display: none;
-}
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 
-#electronics{
-display: none;
-}
-#freezo{
-display: none;
-}
-#ordered{
-display: none;
-}
-#mpty{
-display: none;
-}
-#showError{
-display: none;
-}
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-#showSuccess{
-display: none;
-}
-#done{
-display: none;
-}
-</style>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #container {
+      /* display: none; */
+    }
+
+    #login {
+      display: none;
+    }
+
+    #electronics {
+      display: none;
+    }
+
+    #freezo {
+      display: none;
+    }
+
+    #ordered {
+      display: none;
+    }
+
+    #mpty {
+      display: none;
+    }
+
+    #showError {
+      display: none;
+    }
+
+    #showSuccess {
+      display: none;
+    }
+
+    #done {
+      display: none;
+    }
+
+    #med {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-<div id="container" class="container-fluid">
-  <div id="head">
-     <div id="head1">
-        <img src="./images/2023_02_17_22_45_IMG_4124.JPG"
-         id="image">
-     </div>
-     <div id="head2"></div>
-     <div id="head3"></div>
-     <div id="head4"></div>
-  </div>
+  <div id="container" class="container-fluid">
+    <div id="head">
+      <div id="head1">
+        <img src="./images/2023_02_17_22_45_IMG_4124.JPG" id="image">
+      </div>
+      <div id="head2"></div>
+      <div id="head3"></div>
+      <div id="head4"></div>
+    </div>
 
-  <div id="number2">
+    <div id="number2">
       <div id="in1"></div>
-    <button id="in2">Sell on T.Great universal ltd</button>
-    <button id="inn"></button>
-    <button id="in3">T.GREAT <span class="uni">UNIVERSAL</span>
-     <span class="ltd">LTD</span></button>
-    <button id="in4">PAY</button>
-    <button id="in5">FOOD</button>
-    <button id="in6">LOGISTICS</button>
-  </div number2>
+      <button id="in2">Sell on T.Great universal ltd</button>
+      <button id="inn"></button>
+      <button id="in3">T.GREAT <span class="uni">UNIVERSAL</span>
+        <span class="ltd">LTD</span></button>
+      <button id="in4">PAY</button>
+      <button id="in5">FOOD</button>
+      <button id="in6">LOGISTICS</button>
+    </div number2>
 
-  <div id="number3">
-    
-    <button id="log1"></button>
-    <button id="log2"> T.GREAT</button>
-    <input type="text" name="" id="put" 
-    placeholder="Search products, brands and categories" >
-    <button id="search" >SEARCH</button>
-    <button  id="log3">Help?</button>
-    <button id="log4" onclick="signUp()">Login/Signup</buttton>
-   <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart  <div id="increase"></div></button>&nbsp;
-    <!-- <div id="logger"></div logger> -->
-    
-  </div number3>
+    <!-- <div id="number3"> -->
 
-  <div id="number4">
-    <button id="all1"></button>
-    <button id="all2">All Categories</button>
-    <button id="all3">Computers and Accessories</button>
-    <button id="all4">Phones and Tablets</button>
-    <button id="all5">Electronics</button>
-    <button id="all6">T.Great Fashion</button>
-    <button id="all7">Home and Kitchen</button>
-    <button id="all8">Baby, Kids and Toys</button>
-    <button id="all9">Other categories</button>
-    
-  </div>
+      <!-- <button id="log1"></button>
+      <button id="log2"> T.GREAT</button>
+      <input type="text" name="" id="put" placeholder="Search products, brands and categories">
+      <button id="search">SEARCH</button>
+      <button id="log3">Help?</button>
+      <button id="log4" onclick="signUp()">Login/Signup</buttton>
+        <button id="car" onclick="added()"><i class="fa-solid fa-cart-shopping">&nbsp; </i>Cart <div id="increase">
+          </div></button>&nbsp; -->
+        <!-- <div id="logger"></div logger> -->
 
-  <!-- contents -->
-  <div id="content">
+    <!-- </div number3> -->
+
+    <nav id="number3" class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">T.GREAT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+          </form>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)" onclick="signUp()">Login/SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)" onclick="added()">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="number4">
+      <button id="all1"></button>
+      <button id="all2">All Categories</button>
+      <button id="all3">Computers and Accessories</button>
+      <button id="all4">Phones and Tablets</button>
+      <button id="all5">Electronics</button>
+      <button id="all6">T.Great Fashion</button>
+      <button id="all7">Home and Kitchen</button>
+      <button id="all8">Baby, Kids and Toys</button>
+      <button id="all9">Other categories</button>
+
+    </div number4>
+
+    <div id="med">
+      <div id="med1">Three bars</div>
+      <h2 id="med2">TGreat universal Ltd</h2>
+      <div id="med3"></div>
+      <div id="med5">house</div>
+      <div id="med6">cart</div>
+    </div med>
+
+
+
+    <!-- contents -->
+    <div id="content">
       <!-- <div> <img id="dis" src="./images/displaypic.webp" alt=""></div>
       <div id="diss"> <img id="dis1" src="./images/display pioc 2.jpg" alt=""></div> -->
-    
-<!-- carosel -->
-<div id="demo" class="carousel slide" data-ride="carousel">
 
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"> </li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./images/displaypic.webp" id="mg" alt="" width="1100" height="500">
-    </div>
-    <div class="carousel-item">
-      <img src="./images/display pioc 2.jpg" alt="" id="mg" width="1100" height="500">
-    </div>
-    <div class="carousel-item">
-      <img src="./images/displaypic.webp" alt="" id="mg" width="1100" height="500">
-    </div>
-  </div>
-  
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon bg-danger"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon bg-danger"></span>
-  </a>
-</div>
+      <!-- carosel -->
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"> </li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/displaypic.webp" id="mg" alt="" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/display pioc 2.jpg" alt="" id="mg" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/displaypic.webp" alt="" id="mg" width="1100" height="500">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon bg-danger"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon bg-danger"></span>
+        </a>
+      </div>
 
       <div id="today">Today's Deal</div>
 
-   <div id="tent1"></div>
-   <div id="tent2"></div><br>
-    <div id="show"></div>
-  </div content>
- <!-- electronics page -->
-  <div id="electronics" class="bg-light">
-   <button id="homie" onclick="home()">Home</button>
-    <div id="showElect" class="container-fluid bg-light p-5">
-
-    </div showElect>
-  
-  </div electronics>
-
-  <!-- fridge page -->
-<div id="freezo">
-  <button id="homie" onclick="home()">Home</button>
-  <!-- <div id="cartel"></div> -->
-  <div id="im"></div>
-<div id="refridgerator" class="container-fluid bg-light p-5"></div refridgerator>
-</div freezo>
-
-<!-- order -->
-<div id="ordered">
-  <button id="homie" onclick="home()">Home</button>
-  <div id="cartel"></div>
-  <div id="check">
-     <h1 id="sum">Sub Total</h1>
-    <h1 id="total"></h1>
-  </div check><br>
-  <div><button id="out">CheckOut</button></div>
-
-  <br><br><br>
-</div orders>
+      <div id="tent1" class=""></div>
+      <div id="tent2"></div><br>
+      <div id="show"></div>
 
 
+    </div content>
+    <!-- electronics page -->
+    <div id="electronics" class="bg-light">
+      <button id="homie" onclick="home()">Home</button>
+      <div id="showElect" class="container-fluid bg-info"></div showElect>
 
-</div container>
-<!-- login page -->
-<div id="login" class="container-fluid bg-light">
- <div  class="container p-5 bg-light">
-  <div >
-    <div class="card p-5">
-    <strong id="showError" class="alert alert-danger"></strong>
-    <strong id="showSuccess" class="alert alert-success"></strong>
-     <form action="" id="forms">
-       <h1 class="alert alert-primary">Create An Account</h1>
-       <div class="form-group">
-        <label >First Name</label>
-          <input oninput="handleChange(event)" name="firstName"  type="text" class="form-control" id="input1">
-          <small id="smallie1"></small>
-          <small id="names1"></small>
-       </div>
-       <div class="form-group">
-        <label >Last Name</label>
-          <input oninput="handleChange(event)" name="LastName" type="text" class="form-control" id="input2">
-          <small id="smallie2"></small>
-          <small id="names2"></small>
-       </div>
-       <div class="form-group">
-        <label >Email</label>
-          <input oninput="handleChanges(event)" name="email"  type="email" class="form-control" id="input3">
-          <small id="smallie3"></small>
-          <small id="names3"></small>
-       </div>
-       <div class="form-group">
-        <label > Mobile Number</label>
-          <input oninput="handleChanger(event)" name="number" type="text" class="form-control " id="input4">
-          <small id="smallie4"></small>
-          <small id="names4"></small>
-       </div>
-       <div class="form-group">
-        <label >Password</label>
-          <input oninput="handleChange(event)" name="password" type="password" class="form-control" id="input5">
-          <small id="smallie5"></small>
-       </div>
-         <button class="btn btn-success form-control" onclick="create(event)">Create An Account</button><br>
-        <div id="class" class="mt-5">Already Have an Account?</div>
-        <button class="btn btn-warning form-control mt-1" onclick="logger(event)">Login</button>
-     </form>
+    </div electronics>
+
+    <!-- fridge page -->
+    <div id="freezo">
+      <button id="homie" onclick="home()">Home</button>
+      <!-- <div id="cartel"></div> -->
+      <div id="im"></div>
+      <div id="refridgerator" class="container-fluid bg-light p-5"></div refridgerator>
+    </div freezo>
+
+    <!-- order -->
+    <div id="ordered">
+      <button id="homie" onclick="home()">Home</button>
+      <div id="cartel"></div>
+      <div id="check">
+        <h1 id="sum">Sub Total</h1>
+        <h1 id="total"></h1>
+      </div check><br>
+      <div><button id="out">CheckOut</button></div>
+
+      <br><br><br>
+    </div orders>
+
+
+
+  </div container>
+  <!-- login page -->
+  <div id="login" class="container-fluid bg-light">
+    <div class="container p-5 bg-light">
+      <div>
+        <div class="card p-5">
+          <strong id="showError" class="alert alert-danger"></strong>
+          <strong id="showSuccess" class="alert alert-success"></strong>
+          <form action="" id="forms">
+            <h1 class="alert alert-primary">Create An Account</h1>
+            <div class="form-group">
+              <label>First Name</label>
+              <input oninput="handleChange(event)" name="firstName" type="text" class="form-control" id="input1">
+              <small id="smallie1"></small>
+              <small id="names1"></small>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input oninput="handleChange(event)" name="LastName" type="text" class="form-control" id="input2">
+              <small id="smallie2"></small>
+              <small id="names2"></small>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input oninput="handleChanges(event)" name="email" type="email" class="form-control" id="input3">
+              <small id="smallie3"></small>
+              <small id="names3"></small>
+            </div>
+            <div class="form-group">
+              <label> Mobile Number</label>
+              <input oninput="handleChanger(event)" name="number" type="text" class="form-control " id="input4">
+              <small id="smallie4"></small>
+              <small id="names4"></small>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input oninput="handleChange(event)" name="password" type="password" class="form-control" id="input5">
+              <small id="smallie5"></small>
+            </div>
+            <button class="btn btn-success form-control" onclick="create(event)">Create An Account</button><br>
+            <div id="class" class="mt-5">Already Have an Account?</div>
+            <button class="btn btn-warning form-control mt-1" onclick="logger(event)">Login</button>
+          </form>
+        </div>
+      </div>
+
     </div>
-   </div>
+  </div login>
 
- </div>
-</div login>
-
-<!-- account creation success -->
-   <div id="done" class="container-fluid bg-light p-5">
+  <!-- account creation success -->
+  <div id="done" class="container-fluid bg-light p-5">
     <div id="done2" class="container bg-light p-5">
       <div id="done3" class="card p-5">
         <h2 class=" text-success" id="acc"></h2>
         <br><br><br>
-      <button onclick="continueToPage()" class="form-control bg-warning mt-3" id="cont">Continue</button>
+        <button onclick="continueToPage()" class="form-control bg-warning mt-3" id="cont">Continue</button>
       </div>
     </div>
 
   </div done>
- <!-- <div id="collect"></div> -->
- <!-- empty cart -->
-<div id="mpty"  >
-  <div class="container p-5 mt-5 bg-light">
-  <div id="board" class="card p-5 shadow">
-   <div id="your">your cart is empty <br><br>
-     <div id="your1">Browse  our categories and discover our best deals!</div>
-   <button class="btn btn-warning mt-5" id="your2" onclick="shopping()">Start Shopping</button>
-  
-  </div>
-</div>
-</div>
- </div mpty>
- 
-</body> 
+  <!-- <div id="collect"></div> -->
+  <!-- empty cart -->
+  <div id="mpty">
+    <div class="container p-5 mt-5 bg-light">
+      <div id="board" class="card p-5 shadow">
+        <div id="your">your cart is empty <br><br>
+          <div id="your1">Browse our categories and discover our best deals!</div>
+          <button class="btn btn-warning mt-5" id="your2" onclick="shopping()">Start Shopping</button>
+
+        </div>
+      </div>
+    </div>
+  </div mpty>
+
+</body>
+
 </html>
 <script src="./commerce.js"></script>
