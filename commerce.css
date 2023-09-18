@@ -101,6 +101,10 @@ background-repeat: no-repeat; */
     margin-right: 10px;
     font-weight: 700;
 }
+#numbers{
+    display: flex;
+    justify-content: space-around;
+}
 
 #number3 {
     /* display: flex; */
